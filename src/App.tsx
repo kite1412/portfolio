@@ -1,12 +1,17 @@
+import { useRef } from "react";
 import DoubleChevronDown from "./assets/double-chevron-down.svg?react";
 import Header from "./components/Header";
+import AboutMeSection from "./sections/AboutMeSection";
 
 export default function App() {
+  const aboutRef = useRef<React.RefObject<HTMLDivElement>>(null);
+  
   return (
     <div className="flex flex-col relative">
-      <Header className="fixed" />
-      <div className="px-20 pt-[80px]">
+      <Header className="fixed z-10" />
+      <div className="px-60 pt-[80px]">
         <LandingPage />
+        <AboutMeSection ref={aboutRef} />
       </div>
     </div>
   );

@@ -1,16 +1,17 @@
 import { useState } from "react";
+import { sectionStrings } from "../consts/sections";
 
 export default function Header({
   className = ""
 }: {
   className?: string
 }) {
-  const [currentSection, setCurrentSection] = useState(sections[0]);
+  const [currentSection, setCurrentSection] = useState(sectionStrings[0]);
   
   return (
     <div className={`w-full h-[80px] bg-background flex justify-center items-center gap-10 ${className}`}>
       {
-        sections.map(s => (
+        sectionStrings.map(s => (
           <div 
             className={`
               select-none cursor-pointer ${
@@ -26,10 +27,3 @@ export default function Header({
     </div>
   );
 }
-
-const sections = [
-  "about",
-  "experience",
-  "project",
-  "contact",
-];
