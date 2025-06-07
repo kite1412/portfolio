@@ -1,5 +1,10 @@
 @import 'tailwindcss';
 
+@theme {
+  --color-secondary: #4169E1;
+  --color-background: #F5F5F5;
+}
+
 @font-face {
   font-family: 'Inter';
   src: url('assets\fonts\Inter-VariableFont_opsz,wght.ttf') format('truetype');
@@ -29,19 +34,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
