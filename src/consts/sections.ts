@@ -11,10 +11,10 @@ export const aboutSection: Section = {
   displayName: "About Me",
 }
 
-export const experienceSection: Section = {
+export const skillSection: Section = {
   name: "Skill",
   index: 1,
-  displayName: "Skill",
+  displayName: "Technologies I Use",
 }
 
 export const projectSection: Section = {

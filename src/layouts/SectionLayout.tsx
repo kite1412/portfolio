@@ -16,7 +16,7 @@ export default function SectionLayout({
       className="flex flex-col gap-15 py-20"
     >
       <div className="flex w-full justify-center items-center relative">
-        <div className="absolute w-full h-[2px] bg-black" />
+        <div className="absolute w-full h-[2px] bg-black rounded-2xl" />
         <h3 className="px-4 py-2 bg-background absolute">
           {section}
         </h3>
