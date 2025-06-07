@@ -49,3 +49,17 @@ h3 {
   font-size: 1.8em;
   line-height: 1.1;
 }
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4169E1;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #F5F5F5;
+}
