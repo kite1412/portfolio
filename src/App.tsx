@@ -3,11 +3,13 @@ import DoubleChevronDown from "./assets/double-chevron-down.svg?react";
 import Header from "./components/Header";
 import AboutMeSection from "./sections/AboutMeSection";
 import SkillSection from "./sections/SkillSection";
+import ProjectSection from "./sections/ProjectSection";
 
 export default function App() {
   const aboutRef = useRef<React.RefObject<HTMLDivElement>>(null);
   const skillRef = useRef<React.RefObject<HTMLDivElement>>(null);
-  
+  const projectRef = useRef<React.RefObject<HTMLDivElement>>(null);
+
   return (
     <div className="flex flex-col relative">
       <Header className="fixed z-10" />
@@ -15,6 +17,7 @@ export default function App() {
         <LandingPage />
         <AboutMeSection ref={aboutRef} />
         <SkillSection ref={skillRef} />
+        <ProjectSection ref={skillRef} />
       </div>
     </div>
   );
@@ -23,9 +26,7 @@ export default function App() {
 function LandingPage() {
   return (
     <div className="h-[calc(100vh-80px)] flex flex-col gap-4 items-center justify-center">
-      <h1>
-        Hi, I'm Natha Raditya Rauf
-      </h1>
+      <h1>Hi, I'm Natha Raditya Rauf</h1>
       I plan, design, and build things.
       <DoubleChevronDown className="mt-[80px] animate-bounce" />
     </div>

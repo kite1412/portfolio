@@ -12,40 +12,44 @@ import Tailwind from "../assets/tailwind.svg?react";
 import TypeScript from "../assets/typescript.svg?react";
 import Ktor from "../assets/Ktor.svg?react";
 import Spring from "../assets/spring.svg?react";
+import Figma from "../assets/figma.svg?react";
+import JetpackCompose from "../assets/jetpack-compose.svg?react";
 import { skillSection } from "../consts/sections";
 import SectionLayout from "../layouts/SectionLayout";
 
 export default function SkillSection({
   ref
 }: {
-  ref?: React.RefObject<HTMLDivElement>
+  ref?: React.RefObject<HTMLDivElement>;
 }) {
-  const icon = "size-[60px] text-background"
+  const icon = "size-[60px] text-background";
 
-  return <SectionLayout
-    ref={ref}
-    section={skillSection.displayName}
-  >
-    <div className="flex flex-col gap-10 items-center">
-      <p>
-        These are several technologies that I use comfortably and daily to bring my ideas to life.
-      </p>
-      <div className="flex flex-wrap justify-center gap-8 w-[60%]">
-        <Kotlin className={icon} />
-        <JavaScript className={icon} />
-        <TypeScript className={icon} />
-        <Java className={icon} />
-        <Go className={icon} />
-        <Dart className={icon} />
-        <Android className={icon} />
-        <Flutter className={icon} />
-        <Ktor className={icon} />
-        <ReactLogo className={icon} />
-        <Express className={icon} />
-        <Tailwind className={icon} />
-        <Gin className={icon} />
-        <Spring className={icon} />
+  return (
+    <SectionLayout ref={ref} section={skillSection.displayName}>
+      <div className="flex flex-col gap-10 items-center">
+        <p>
+          These are several technologies that I use comfortably to bring my
+          ideas to life.
+        </p>
+        <div className="flex flex-wrap justify-center gap-8 w-[60%]">
+          <Kotlin className={icon} />
+          <JavaScript className={icon} />
+          <TypeScript className={icon} />
+          <Java className={icon} />
+          <Go className={icon} />
+          <Dart className={icon} />
+          <Android className={icon} />
+          <JetpackCompose className={icon} />
+          <Flutter className={icon} />
+          <Ktor className={icon} />
+          <ReactLogo className={icon} />
+          <Express className={icon} />
+          <Tailwind className={icon} />
+          <Gin className={icon} />
+          <Spring className={icon} />
+          <Figma className={icon} />
+        </div>
       </div>
-    </div>
-  </SectionLayout>;
+    </SectionLayout>
+  );
 }
