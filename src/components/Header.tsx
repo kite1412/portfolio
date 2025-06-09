@@ -53,7 +53,7 @@ export default function Header({
       </div>
       <div 
         className="flex gap-2 justify-end items-center select-none cursor-pointer flex-1/10"
-        onClick={() => window.open("https://github.com/kite1412/react-simple-portfolio", "_blank")}
+        onClick={() => window.open("https://github.com/kite1412/portfolio", "_blank")}
       >
         <Github className="size-sm" />
         <span className="text-sm">Portfolio Repo</span>
