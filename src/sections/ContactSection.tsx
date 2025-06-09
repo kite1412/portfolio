@@ -29,7 +29,7 @@ export default function ContactSection() {
         className="border-1 px-6 py-2 rounded-[8px] min-h-[200px]"
         placeholder="Content"
       />
-      <div className="px-6 py-2 bg-secondary text-white w-fit rounded-[8px] ml-auto">
+      <div className="px-6 py-2 select-none cursor-pointer bg-secondary text-white w-fit rounded-[8px] ml-auto">
         Send
       </div>
     </div>

@@ -18,7 +18,7 @@ export default function App() {
   const aboutInView = useInView(aboutRef, { amount: 0.25 });
   const skillInView = useInView(skillRef, { amount: 0.25 });
   const projectInView = useInView(projectRef, { amount: 0.25 });
-  const contactInView = useInView(projectRef, { amount: 0.25 });
+  const contactInView = useInView(contactRef, { amount: 0.25 });
   const [autoScroll, setAutoScroll] = useState(false);
   const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>, section: string) => {
     setCurrentSection(section);
