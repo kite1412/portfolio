@@ -6,15 +6,38 @@ import SkillSection from "./sections/SkillSection";
 import ProjectSection from "./sections/ProjectSection";
 import Footer from "./components/Footer";
 import { motion, useInView } from "framer-motion";
+import { aboutSection, projectSection, skillSection } from "./consts/sections";
 
 export default function App() {
   const aboutRef = useRef<HTMLDivElement>(null);
   const skillRef = useRef<HTMLDivElement>(null);
   const projectRef = useRef<HTMLDivElement>(null);
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
+    if (ref.current) {
+      const yOffset = -100;
+      const y = ref.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="flex flex-col relative">
-      <Header className="fixed z-10" />
+      <Header
+        onSectionClick={s => {
+          switch (s) {
+            case aboutSection.name:
+              scrollToSection(aboutRef);
+              break;
+            case skillSection.name:
+              scrollToSection(skillRef);
+              break;
+            case projectSection.name:
+              scrollToSection(projectRef);
+              break;  
+          }
+        }} 
+        className="fixed z-10" 
+      />
       <div className="absolute h-screen w-full">
         <div className="absolute size-[300px] animate-color-cycle rounded-full bottom-20 right-20" />
         <div className="absolute flex gap-4 top-30 left-40">

@@ -3,7 +3,13 @@ import { sectionStrings } from "../consts/sections";
 import GithubFilled from "../assets/github-filled.svg?react";
 import Github from "../assets/github.svg?react";
 
-export default function Header({ className = "" }: { className?: string }) {
+export default function Header({
+  onSectionClick,
+  className = ""
+}: { 
+  onSectionClick: (s: string) => void;
+  className?: string; 
+}) {
   const [currentSection, setCurrentSection] = useState(sectionStrings[0]);
 
   return (
@@ -25,7 +31,10 @@ export default function Header({ className = "" }: { className?: string }) {
                   currentSection === s ? "text-secondary" : "text-black"
                 }
               `}
-            onClick={() => setCurrentSection(s)}
+            onClick={() => {
+              setCurrentSection(s);
+              onSectionClick(s);
+            }}
           >
             {s}
           </div>
