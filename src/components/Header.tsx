@@ -20,11 +20,13 @@ export default function Header({
         ${className}
       `}
     >
-      <GithubFilled 
-        className="size-[32px] cursor-pointer"
-        onClick={() => window.open("https://github.com/kite1412", "_blank")} 
-      />
-      <div className="flex gap-10">
+      <div className="flex flex-1/10">
+        <GithubFilled 
+          className="size-[32px] cursor-pointer"
+          onClick={() => window.open("https://github.com/kite1412", "_blank")} 
+        />
+      </div>
+      <div className="flex gap-10 flex-8/10 justify-center">
         {sectionStrings.map((s) => (
           <div
             className={`
@@ -42,7 +44,7 @@ export default function Header({
         ))}
       </div>
       <div 
-        className="flex gap-2 items-center select-none cursor-pointer"
+        className="flex gap-2 justify-end items-center select-none cursor-pointer flex-1/10"
         onClick={() => window.open("https://github.com/kite1412/react-simple-portfolio", "_blank")}
       >
         <Github className="size-sm" />
