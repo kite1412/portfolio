@@ -6,10 +6,15 @@ export default function Footer() {
   const icon = "size-[32px]"
 
   return (
-    <div className={`
-      w-full bg-[#2C47AA] min-h-[180px] py-5 px-10 text-background
-      flex flex-col
-    `}>
+    <div 
+      className={`
+        w-full min-h-[180px] py-6 px-10 text-background
+        flex flex-col
+      `}
+      style={{
+        background: "linear-gradient(1.6deg, #2C47AA 80%, #F5F5F5 80.5%)"
+      }}
+    >
       <div className="flex flex-col gap-2">
         Built with:
         <div className="flex gap-4 items-center">
