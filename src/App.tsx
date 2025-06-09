@@ -1,4 +1,4 @@
-import React, { useRef, type JSX } from "react";
+import React, { useEffect, useRef, useState, type JSX } from "react";
 import DoubleChevronDown from "./assets/double-chevron-down.svg?react";
 import Header from "./components/Header";
 import AboutMeSection from "./sections/AboutMeSection";
@@ -9,30 +9,57 @@ import { motion, useInView } from "framer-motion";
 import { aboutSection, projectSection, skillSection } from "./consts/sections";
 
 export default function App() {
+  const [currentSection, setCurrentSection] = useState("");
   const aboutRef = useRef<HTMLDivElement>(null);
   const skillRef = useRef<HTMLDivElement>(null);
   const projectRef = useRef<HTMLDivElement>(null);
-  const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
+  const aboutInView = useInView(aboutRef, { amount: 0.25 });
+  const skillInView = useInView(skillRef, { amount: 0.25 });
+  const projectInView = useInView(projectRef, { amount: 0.25 });
+  const [autoScroll, setAutoScroll] = useState(false);
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>, section: string) => {
+    setCurrentSection(section);
+    setAutoScroll(true);
+    
     if (ref.current) {
       const yOffset = -100;
       const y = ref.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      console.log(y);
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
+
+    setTimeout(() => {
+      setAutoScroll(false);
+    }, 800);
   };
+  const aboutSectionName = aboutSection.name;
+  const skillSectionName = skillSection.name;
+  const projectSectionName = projectSection.name;
+
+  useEffect(() => {
+    if (autoScroll) return;
+
+    if (aboutInView) setCurrentSection(aboutSection.name)
+    else if (skillInView) setCurrentSection(skillSection.name)
+    else if (projectInView) setCurrentSection(projectSection.name)
+    else setCurrentSection("");
+  }, [aboutInView, skillInView, projectInView, autoScroll]);
 
   return (
     <div className="flex flex-col relative">
       <Header
+        currentSection={currentSection}
+        setCurrentSection={setCurrentSection}
         onSectionClick={s => {
           switch (s) {
-            case aboutSection.name:
-              scrollToSection(aboutRef);
+            case aboutSectionName:
+              scrollToSection(aboutRef, aboutSectionName);
               break;
-            case skillSection.name:
-              scrollToSection(skillRef);
+            case skillSectionName:
+              scrollToSection(skillRef, skillSectionName);
               break;
-            case projectSection.name:
-              scrollToSection(projectRef);
+            case projectSectionName:
+              scrollToSection(projectRef, projectSectionName);
               break;  
           }
         }} 

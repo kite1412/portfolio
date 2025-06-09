@@ -1,17 +1,18 @@
-import { useState } from "react";
 import { sectionStrings } from "../consts/sections";
 import GithubFilled from "../assets/github-filled.svg?react";
 import Github from "../assets/github.svg?react";
 
 export default function Header({
+  currentSection,
+  setCurrentSection,
   onSectionClick,
   className = ""
 }: { 
+  currentSection: string;
+  setCurrentSection: (s: string) => void;
   onSectionClick: (s: string) => void;
   className?: string; 
 }) {
-  const [currentSection, setCurrentSection] = useState(sectionStrings[0]);
-
   return (
     <div
       className={`
