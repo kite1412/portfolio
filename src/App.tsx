@@ -6,16 +6,19 @@ import SkillSection from "./sections/SkillSection";
 import ProjectSection from "./sections/ProjectSection";
 import Footer from "./components/Footer";
 import { motion, useInView } from "framer-motion";
-import { aboutSection, projectSection, skillSection } from "./consts/sections";
+import { aboutSection, contactSection, projectSection, skillSection } from "./consts/sections";
+import ContactSection from "./sections/ContactSection";
 
 export default function App() {
   const [currentSection, setCurrentSection] = useState("");
   const aboutRef = useRef<HTMLDivElement>(null);
   const skillRef = useRef<HTMLDivElement>(null);
   const projectRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
   const aboutInView = useInView(aboutRef, { amount: 0.25 });
   const skillInView = useInView(skillRef, { amount: 0.25 });
   const projectInView = useInView(projectRef, { amount: 0.25 });
+  const contactInView = useInView(projectRef, { amount: 0.25 });
   const [autoScroll, setAutoScroll] = useState(false);
   const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>, section: string) => {
     setCurrentSection(section);
@@ -35,6 +38,7 @@ export default function App() {
   const aboutSectionName = aboutSection.name;
   const skillSectionName = skillSection.name;
   const projectSectionName = projectSection.name;
+  const contactSectionName = contactSection.name;
 
   useEffect(() => {
     if (autoScroll) return;
@@ -42,8 +46,9 @@ export default function App() {
     if (aboutInView) setCurrentSection(aboutSection.name)
     else if (skillInView) setCurrentSection(skillSection.name)
     else if (projectInView) setCurrentSection(projectSection.name)
+    else if (contactInView) setCurrentSection(contactSection.name)
     else setCurrentSection("");
-  }, [aboutInView, skillInView, projectInView, autoScroll]);
+  }, [aboutInView, skillInView, projectInView, contactInView, autoScroll]);
 
   return (
     <div className="flex flex-col relative">
@@ -60,7 +65,10 @@ export default function App() {
               break;
             case projectSectionName:
               scrollToSection(projectRef, projectSectionName);
-              break;  
+              break;
+            case contactSectionName:
+              scrollToSection(contactRef, contactSectionName);
+              break;
           }
         }} 
         className="fixed z-10" 
@@ -112,6 +120,9 @@ export default function App() {
         </AnimateVisibility>
         <AnimateVisibility ref={projectRef}>
           <ProjectSection />
+        </AnimateVisibility>
+        <AnimateVisibility ref={contactRef}>
+          <ContactSection />
         </AnimateVisibility>
       </div>
       <Footer />

@@ -1,6 +1,7 @@
 import { sectionStrings } from "../consts/sections";
 import GithubFilled from "../assets/github-filled.svg?react";
 import Github from "../assets/github.svg?react";
+import LinkedIn from "../assets/linkedin.svg?react";
 
 export default function Header({
   currentSection,
@@ -13,6 +14,9 @@ export default function Header({
   onSectionClick: (s: string) => void;
   className?: string; 
 }) {
+  const icon = "size-[32px] cursor-pointer";
+  const open = (url: string) => window.open(url, "_blank");
+
   return (
     <div
       className={`
@@ -20,10 +24,14 @@ export default function Header({
         ${className}
       `}
     >
-      <div className="flex flex-1/10">
+      <div className="flex items-center gap-4 flex-1/10">
         <GithubFilled 
-          className="size-[32px] cursor-pointer"
-          onClick={() => window.open("https://github.com/kite1412", "_blank")} 
+          className={icon}
+          onClick={() => open("https://github.com/kite1412")} 
+        />
+        <LinkedIn 
+          className={icon}
+          onClick={() => open("https://www.linkedin.com/in/natha-raditya-rauf-456927293")}
         />
       </div>
       <div className="flex gap-10 flex-8/10 justify-center">
