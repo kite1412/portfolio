@@ -10,7 +10,6 @@ export default function Header({ className = "" }: { className?: string }) {
     <div
       className={`
         w-full h-[80px] bg-background flex justify-between items-center px-8
-        
         ${className}
       `}
     >
