@@ -7,7 +7,7 @@ export default function SectionLayout({
   ignorePadding = false
 }: {
   section: string;
-  ref?: React.RefObject<HTMLDivElement>;
+  ref: React.RefObject<HTMLDivElement | null>;
   children: JSX.Element;
   ignorePadding?: boolean;
 }) {

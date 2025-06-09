@@ -26,7 +26,7 @@ import books from "../assets/books.svg";
 export default function ProjectSection({
   ref
 }: {
-  ref?: React.RefObject<HTMLDivElement>;
+  ref: React.RefObject<HTMLDivElement | null>;
 }) {
   return (
     <SectionLayout ref={ref} section={projectSection.displayName}>

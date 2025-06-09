@@ -20,7 +20,7 @@ import SectionLayout from "../layouts/SectionLayout";
 export default function SkillSection({
   ref
 }: {
-  ref?: React.RefObject<HTMLDivElement>;
+  ref: React.RefObject<HTMLDivElement | null>;
 }) {
   const icon = "size-[60px] text-background";
 

@@ -6,9 +6,9 @@ import SkillSection from "./sections/SkillSection";
 import ProjectSection from "./sections/ProjectSection";
 
 export default function App() {
-  const aboutRef = useRef<React.RefObject<HTMLDivElement>>(null);
-  const skillRef = useRef<React.RefObject<HTMLDivElement>>(null);
-  const projectRef = useRef<React.RefObject<HTMLDivElement>>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const skillRef = useRef<HTMLDivElement>(null);
+  const projectRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="flex flex-col relative">
@@ -17,7 +17,8 @@ export default function App() {
         <LandingPage />
         <AboutMeSection ref={aboutRef} />
         <SkillSection ref={skillRef} />
-        <ProjectSection ref={skillRef} />
+        <ProjectSection ref={projectRef} />
+
       </div>
     </div>
   );

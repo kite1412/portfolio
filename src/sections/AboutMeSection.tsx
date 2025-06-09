@@ -5,7 +5,7 @@ import idea from "../assets/idea.png";
 export default function AboutMeSection({
   ref
 }: {
-  ref?: React.RefObject<HTMLDivElement>;
+  ref: React.RefObject<HTMLDivElement | null>;
 }) {
   return (
     <SectionLayout section={aboutSection.displayName} ref={ref}>
