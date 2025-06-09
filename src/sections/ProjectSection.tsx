@@ -1,4 +1,3 @@
-import type React from "react";
 import { projectSection } from "../consts/sections";
 import SectionLayout from "../layouts/SectionLayout";
 import taskifyPreview from "../assets/taskify-preview.png";
@@ -23,13 +22,9 @@ import movieHub from "../assets/moviehub-logo.svg";
 import csirt from "../assets/csirt-logo.svg";
 import books from "../assets/books.svg";
 
-export default function ProjectSection({
-  ref
-}: {
-  ref: React.RefObject<HTMLDivElement | null>;
-}) {
+export default function ProjectSection() {
   return (
-    <SectionLayout ref={ref} section={projectSection.displayName}>
+    <SectionLayout section={projectSection.displayName}>
       <div className="flex flex-col gap-30">
         <div className="flex flex-col gap-20 px-20">
           {featuredProjects.map((p, i) => (
@@ -46,7 +41,7 @@ export default function ProjectSection({
             />
           ))}
         </div>
-        <SectionLayout ref={ref} section="Other Project" ignorePadding={true}>
+        <SectionLayout section="Other Project" ignorePadding={true}>
           <div className="grid grid-cols-2 gap-8">
             {
               otherProjects.map(p => (

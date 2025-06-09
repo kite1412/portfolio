@@ -17,15 +17,11 @@ import JetpackCompose from "../assets/jetpack-compose.svg?react";
 import { skillSection } from "../consts/sections";
 import SectionLayout from "../layouts/SectionLayout";
 
-export default function SkillSection({
-  ref
-}: {
-  ref: React.RefObject<HTMLDivElement | null>;
-}) {
+export default function SkillSection() {
   const icon = "size-[60px] text-background";
 
   return (
-    <SectionLayout ref={ref} section={skillSection.displayName}>
+    <SectionLayout section={skillSection.displayName}>
       <div className="flex flex-col gap-10 items-center">
         <p>
           These are several technologies that I use comfortably to bring my

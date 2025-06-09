@@ -2,13 +2,9 @@ import { aboutSection } from "../consts/sections";
 import SectionLayout from "../layouts/SectionLayout";
 import idea from "../assets/idea.png";
 
-export default function AboutMeSection({
-  ref
-}: {
-  ref: React.RefObject<HTMLDivElement | null>;
-}) {
+export default function AboutMeSection() {
   return (
-    <SectionLayout section={aboutSection.displayName} ref={ref}>
+    <SectionLayout section={aboutSection.displayName}>
       <div className="w-full flex gap-10 justify-between">
         <div>
           <p>

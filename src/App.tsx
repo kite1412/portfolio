@@ -78,13 +78,13 @@ export default function App() {
       <div className="px-60 pt-[80px] flex flex-col">
         <LandingPage />
         <AnimateVisibility ref={aboutRef}>
-          <AboutMeSection ref={aboutRef} />
+          <AboutMeSection />
         </AnimateVisibility>
         <AnimateVisibility ref={skillRef}>
-          <SkillSection ref={skillRef} />
+          <SkillSection />
         </AnimateVisibility>
         <AnimateVisibility ref={projectRef}>
-          <ProjectSection ref={projectRef} />
+          <ProjectSection />
         </AnimateVisibility>
       </div>
       <Footer />
