@@ -186,7 +186,7 @@ const featuredProjects: Array<Project> = [
   },
   {
     name: "MangaRealm",
-    desc: "MangaDex Client application for Android built using Kotlin Multiplatform. Read, manage, personalize, and keep track of your manga list.",
+    desc: "Android application built using Kotlin Multiplatform. Read, manage, personalize, and keep track of user's manga list.",
     img: mangarealmPreview,
     role: "Mobile Dev",
     type: "Personal project",
@@ -196,7 +196,6 @@ const featuredProjects: Array<Project> = [
       <JetpackCompose className={icon} />,
       <Ktor className={icon} />
     ],
-    githubRepo: "https://github.com/kite1412/kmp-mangarealm",
     coverType: "object-cover"
   },
   {
